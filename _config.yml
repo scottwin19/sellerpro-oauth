@@ -1,0 +1,27 @@
+title: SellerPro OAuth Handler
+description: Private OAuth redirect handler for eBay API integration
+
+repository: scottwin19/sellerpro-oauth
+private: true
+
+enforce_ssl: scottwin19.github.io
+
+exclude:
+  - README.md
+  - config/
+  - docs/
+  - .gitignore
+  - .env*
+  - "*.js"
+  - "*.json"
+
+include:
+  - index.html
+  - 404.html
+
+plugins: []
+markdown: kramdown
+highlighter: rouge
+
+safe: true
+incremental: false
