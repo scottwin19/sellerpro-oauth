@@ -1,10 +1,15 @@
- <!DOCTYPE html>
-  <html>
-  <head><title>SellerPro — Connecting to eBay...</title></head>
+<!DOCTYPE html>
+  <html>                                                                                                                                                <head><title>ResellerPro – eBay Auth</title></head>
   <body>
-  <p>Connecting to SellerPro... if nothing happens, make sure the app is running.</p>
+  <p>Connecting to ResellerPro...</p>
   <script>
-    window.location.replace('http://localhost:3001/api/ebay/oauth/callback' + window.location.search);
+    const code = new URLSearchParams(window.location.search).get('code');
+    if (code) {
+      window.location.href = 'http://localhost:3001/api/ebay/oauth/callback?code=' + encodeURIComponent(code);
+    } else {
+      document.body.innerHTML = '<p style="color:red">No authorization code found. <a href="http://localhost:5173/settings">Go back to
+  Settings</a>.</p>';
+    }
   </script>
   </body>
   </html>
